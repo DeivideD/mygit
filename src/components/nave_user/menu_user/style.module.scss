@@ -1,0 +1,32 @@
+.container {
+  padding-bottom: 1em;
+  border-bottom: 1px solid var(--gray-500);
+
+  .nav {
+    li {
+      list-style: none;
+      margin: .5rem 0;
+      background: var(--gray-850);
+      border-radius: .5rem;
+
+      a {
+        display: block;
+        color: var(--gray-300);
+        text-decoration: none;
+        padding: .5rem 0;
+        font-weight: bold;
+        margin-left: .8rem;
+        transition: all 0.5s;
+
+        &:hover {
+          color: var(--white);
+        }
+        
+      }
+
+      span {
+        margin-left: .5rem;
+      }
+    }
+  }
+}
