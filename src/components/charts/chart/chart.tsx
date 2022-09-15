@@ -1,37 +1,18 @@
 
-import { Chart } from "react-google-charts";
+import { Chart, ChartWrapperOptions, GoogleChartWrapperChartType } from "react-google-charts";
 import styles from './style.module.scss'
 
 
-interface Props { 
-  data: (string | number)[][];
-  options: Options;
+interface Props {
+  chartType: GoogleChartWrapperChartType; 
+  data: any[] | {};
+  options?:  ChartWrapperOptions["options"];
+  width: string;
+  height: string;
 }
 
-interface LegendTextStyle { 
-   color: string;
-   fontSize: number;
-   italic: boolean; 
-}
-export interface Legend {
-  position: string;
-  textStyle: LegendTextStyle;
-}
+export default function Grafic({chartType, data, options, width, height} : Props) {
 
-interface TitleTextStyle {
-  color: string;
-}
-
-interface Options { 
-  title: string;
-  is3D: boolean;
-  backgroundColor: string;
-  fontName: string;
-  legend: Legend;
-  titleTextStyle: TitleTextStyle;
-}
-
-export default function GraficPie({data, options} : Props) {
   // const data = [
   //   ["Task", "Hours per Day"],
   //   ["Work", 2],
@@ -52,11 +33,11 @@ export default function GraficPie({data, options} : Props) {
   return (
     <div className={styles.chat}>
       <Chart
-        chartType="PieChart"
+        chartType={chartType}
         data={data}
         options={options}
-        width={"100%"}
-        height={"400px"}
+        width={width}
+        height={height}
       />
     </div>
   )

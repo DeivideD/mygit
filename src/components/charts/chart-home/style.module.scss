@@ -1,0 +1,12 @@
+.chart{
+  display: flex;
+  flex-direction: row;
+  background-color: '#fff';
+  padding: 0 1rem;
+
+  div {
+    display: inline-block;
+    margin: 0 auto;
+    border-radius: .5rem;
+  }
+}
